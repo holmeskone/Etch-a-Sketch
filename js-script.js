@@ -1,23 +1,19 @@
 // Create the div container that will contain all other squares
 const container = document.querySelector(".container");
 
-// Create variable for number of sides
-let sides;
+// Create default value for number of sides
+let sides = 16;
 
-//Create function to grid
+//Function to create grid
 const createSquares = (sides) => {
-    //Create CSS size of grid - so that the grid is a square. 
-    let gridPx = sides * 50;
-    // Set the CSS variable --grid-px with the value of gridPx
-    document.documentElement.style.setProperty('--grid-px', `${gridPx}px`);
-    //Create CSS size for the size of square - each square to resize with grid size. 
+    //Create CSS variable that resizes squares based on matrix.
     let squareSize = (800/(sides))-2;
-    // Set the CSS variable --grid-px with the value of gridPx
+    console.log(`There will be ` + sides + ` sides.`);
+    // Set the CSS variable --square-Size with the value of squareSize
     document.documentElement.style.setProperty('--square-Size', `${squareSize}px`);
-
-    // Loop through size of grid. Size of grid side*side.
+    // <div> creation based on the sidze of the grid -eg: 5x5 = 25 <div>
     for (let i = 0; i < sides**2; i++) {
-        // Create one div (square) that will form the grid
+        // Create one div (square)
         const square = document.createElement("div");
         // Add class to div
         square.classList.add("square");
@@ -25,21 +21,17 @@ const createSquares = (sides) => {
         container.appendChild(square);;
       }
 }
+createSquares(sides);
 
-//Create a function for when button is pressed
+//But if the button is clicked and the popus shows, then turn the value of the number of sides to the number inserted in the popup.
+
 // Create constant for button
 newGame = document.getElementById("newGame");
-//Make popup open by clicking button.
-newGame.addEventListener("click",() => {
-    // Ask how many sides on the square?
-    let size = prompt("Ask how many sides on the square?");
-    console.log(size);
-    return size;
-});
-
-// After they click enter, remove previous grid from display
-
-
-// Creates a new grid in the same space as before, so size of squares will be smaller. 
-
-createSquares(8);
+//If button is clicked, then ask a question
+if (newGame.addEventListener("click",() => {
+// Insert the question and the answer will be the new number of sides.
+    let sides = prompt("Ask how many sides on the square?");
+    console.log(sides);
+    // Call the function again
+    createSquares(sides);
+}));
