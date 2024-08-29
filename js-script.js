@@ -7,12 +7,13 @@ let sides = 16;
 //Function to create grid
 const createSquares = (sides) => {
     //Create CSS variable that resizes squares based on matrix.
-    let squareSize = (800/(sides))-2;
-    console.log(`There will be ` + sides + ` sides.`);
+    let squareSize = (500/(sides));
+    console.log(`This is the size of the square` + squareSize);
     // Set the CSS variable --square-Size with the value of squareSize
     document.documentElement.style.setProperty('--square-Size', `${squareSize}px`);
     // <div> creation based on the sidze of the grid -eg: 5x5 = 25 <div>
     for (let i = 0; i < sides**2; i++) {
+        console.log(`This is side number ` + i );
         // Create one div (square)
         const square = document.createElement("div");
         // Add class to div
