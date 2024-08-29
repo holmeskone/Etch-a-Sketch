@@ -2,9 +2,14 @@
 const container = document.querySelector(".container");
 
 // Create variable for number of sides
-let grid = 16;
-// Create variable for size of grid
+let grid = 20;
+// Create variable for size of grid, this is used for the creation of squares later in the looping section.
 let gridSize = grid * grid;
+
+//Create CSS size of grid
+let gridPx = grid * 50;
+// Set the CSS variable --grid-px with the value of gridPx
+document.documentElement.style.setProperty('--grid-px', `${gridPx}px`);
 
 //Create divs function to create 16x16 
 const createSquares = (gridSize) => {
