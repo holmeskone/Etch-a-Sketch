@@ -1,8 +1,11 @@
 .container{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    width: var(--grid-px);
 }
 .square{
+    height: 48px;
+    width: 48px;
     border: 1px solid;
-    padding: 10px;
 }
