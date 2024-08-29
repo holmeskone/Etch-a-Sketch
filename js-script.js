@@ -21,4 +21,19 @@ const createSquares = (sides) => {
       }
 }
 
+//Create a function for when button is pressed
+// Create constant for button
+newGame = document.getElementById("newGame");
+//Make popup open by clicking button.
+newGame.addEventListener("click",() => {
+    // Ask how many sides on the square?
+    let size = prompt("Ask how many sides on the square?");
+    console.log(size);
+    return size;
+});
+
+// After they click enter, remove previous grid from display
+
+// Creates a new grid in the same space as before, so size of squares will be smaller. 
+
 createSquares(20);
