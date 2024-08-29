@@ -5,3 +5,14 @@ const container = document.querySelector(".container");
 const square = document.createElement("div");
 square.classList.add("square");
 container.appendChild(square);
+
+
+
+//Create divs function to create 16x16 
+const createSquares = (gridSize) => {
+    for (let i = 0; i < gridSize; i++) {
+        console.log("This Grid is " + i);
+      }
+}
+
+createSquares(3);
