@@ -6,7 +6,8 @@ const square = document.createElement("div");
 square.classList.add("square");
 container.appendChild(square);
 
-
+let grid = 16;
+let gridSize = grid * grid;
 
 //Create divs function to create 16x16 
 const createSquares = (gridSize) => {
@@ -17,4 +18,4 @@ const createSquares = (gridSize) => {
       }
 }
 
-createSquares(10);
+createSquares(gridSize);
