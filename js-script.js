@@ -10,6 +10,11 @@ const createSquares = (sides) => {
     let gridPx = sides * 50;
     // Set the CSS variable --grid-px with the value of gridPx
     document.documentElement.style.setProperty('--grid-px', `${gridPx}px`);
+    //Create CSS size for the size of square - each square to resize with grid size. 
+    let squareSize = (800/(sides))-2;
+    // Set the CSS variable --grid-px with the value of gridPx
+    document.documentElement.style.setProperty('--square-Size', `${squareSize}px`);
+
     // Loop through size of grid. Size of grid side*side.
     for (let i = 0; i < sides**2; i++) {
         // Create one div (square) that will form the grid
@@ -34,6 +39,7 @@ newGame.addEventListener("click",() => {
 
 // After they click enter, remove previous grid from display
 
+
 // Creates a new grid in the same space as before, so size of squares will be smaller. 
 
-createSquares(20);
+createSquares(8);
