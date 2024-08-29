@@ -2,10 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: var(--grid-px);
+    width: 800px;
 }
 .square{
-    height: 48px;
-    width: 48px;
+    height: var(--square-Size);
+    width: var(--square-Size);
     border: 1px solid;
 }
