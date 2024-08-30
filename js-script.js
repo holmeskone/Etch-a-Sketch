@@ -24,6 +24,23 @@ const createSquares = (sides) => {
 }
 createSquares(sides);
 
+
+//Converting hovered square into a colored square
+document.querySelectorAll('.square').forEach(function(square) {
+    square.addEventListener('mouseenter', function() {
+        this.classList.add('hovered');
+    });
+});
+
+// Reseting hover effect after starting a new grid
+document.getElementById('newGame').addEventListener('click', function() {
+    document.querySelectorAll('.square').forEach(function(square) {
+        square.classList.remove('hovered');
+    });
+});
+
+
+
 //But if the button is clicked and the popus shows, then turn the value of the number of sides to the number inserted in the popup.
 
 // Create constant for button
