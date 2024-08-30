@@ -50,9 +50,32 @@ newGame = document.getElementById("newGame");
 if (newGame.addEventListener("click",() => {
 // Insert the question and the answer will be the new number of sides.
     let sides = prompt("Ask how many sides on the square?");
-    console.log(sides);
     // Call the function again
     createSquares(sides);
+    getRandomIntInclusive(0, 255);
 }));
 
 
+
+//Random color chooserSection 
+
+function getRandomIntInclusive(min, max) {
+    //Array to send to css for color.
+    rgbArray = [];
+    //For loop of 3 values
+    for (let i = 0; i < 3; i++) {
+    //Random number between 0 and 255 for RGB color.
+        const minCeiled = Math.ceil(min);
+        const maxFloored = Math.floor(max);
+        value = Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled)
+        console.log(`The value of the ` +i+` number is `+ value);
+        rgbArray.push(value);
+        console.log(rgbArray);
+        rgbArray[i]=value;
+      }
+    // Set the CSS variable --square-Size with the value of squareSize
+    document.documentElement.style.setProperty('--color-0', `${rgbArray[0]}`);
+    document.documentElement.style.setProperty('--color-1', `${rgbArray[1]}`);
+    document.documentElement.style.setProperty('--color-2', `${rgbArray[2]}`);
+}
+getRandomIntInclusive(0, 255);
