@@ -28,11 +28,37 @@ createSquares(sides);
 
 
 //Converting hovered square into a colored square
+function hoveredSquare(){
 document.querySelectorAll('.square').forEach(function(square) {
     square.addEventListener('mouseenter', function() {
+        // Check if the square already has a random colour stored
+        let randomColor = this.getAttribute('data-random-color');
+        
+        //if not
+        if (!randomColor) {
+        // Generate a new random color
+        // Calls the Random Color Generator function
+          let randomColor = rgbArray;
+          getRandomIntInclusive(0, 255);
+          // Store the generated color in a data attribute
+          this.setAttribute('data-random-color', randomColor);
+        }
+
+        //Allow data-random-color to be used in CSS 
+        document.querySelectorAll('[data-random-color]').forEach(function(element) {
+            let colorValue = element.getAttribute('data-random-color');
+            element.style.setProperty('--random-color', colorValue);
+        });
+
+        // Add an attribute to store this information.
         this.classList.add('hovered');
+        // Print the random number to the console
+        console.log(rgbArray);
     });
 });
+};
+
+hoveredSquare();
 
 // Reseting hover effect after starting a new grid
 document.getElementById('newGame').addEventListener('click', function() {
@@ -53,6 +79,7 @@ if (newGame.addEventListener("click",() => {
     // Call the function again
     createSquares(sides);
     getRandomIntInclusive(0, 255);
+    hoveredSquare();
 }));
 
 
