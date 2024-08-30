@@ -18,6 +18,8 @@ const createSquares = (sides) => {
         const square = document.createElement("div");
         // Add class to div
         square.classList.add("square");
+        // Add id to div
+        square.id = i;
         // Make it child of container
         container.appendChild(square);;
       }
@@ -40,7 +42,6 @@ document.getElementById('newGame').addEventListener('click', function() {
 });
 
 
-
 //But if the button is clicked and the popus shows, then turn the value of the number of sides to the number inserted in the popup.
 
 // Create constant for button
@@ -53,3 +54,5 @@ if (newGame.addEventListener("click",() => {
     // Call the function again
     createSquares(sides);
 }));
+
+
