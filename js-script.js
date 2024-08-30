@@ -57,13 +57,13 @@ document.querySelectorAll('.square').forEach(function(square) {
     });
 });
 };
-
 hoveredSquare();
 
 // Reseting hover effect after starting a new grid
 document.getElementById('newGame').addEventListener('click', function() {
     document.querySelectorAll('.square').forEach(function(square) {
         square.classList.remove('hovered');
+        square.removeAttribute("data-random-color");
     });
 });
 
