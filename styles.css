@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-.square{
+.square.hovered{
     background-color: rgb(var(--random-color));
 }
 
