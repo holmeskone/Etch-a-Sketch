@@ -13,6 +13,6 @@
 }
 
 .square.hovered{
-    background-color: aquamarine;
+    background-color: rgb(var(--color-0), var(--color-1), var(--color-2));
 }
 
